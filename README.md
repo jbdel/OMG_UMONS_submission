@@ -27,7 +27,7 @@ Please refer to the context folder for features extraction.
 
 
 Results on dev set (averages on 10 runs)
-
+0.274219505653(0.244323394574/0.304115616732)
 | Modality  | CCC Arousal | CCC Valence | CCC Mean |
 | ------------- | ------------- |------------- |------------- |
 |  Monomodal feature extraction   |  |  | |
@@ -39,5 +39,5 @@ Results on dev set (averages on 10 runs)
 | Audio |  |  | 0.223 |
 | Video  |   |  | 0.227 |
 |  Contextual multimoal   |  | | |
-A+T+V | 0.213   | 0.287 | 0.250 |
-
+A+T+V | 0.244   | 0.304| 0.274 |
+A+T+V+CBP | 0.280  | 0.321| 0.301 |
