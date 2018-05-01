@@ -38,5 +38,6 @@ Results on dev set (averages on 10 runs)
 | Text   |   | | 0.220  |
 | Audio |  |  | 0.223 |
 | Video  |   |  | 0.227 |
-
+|  Contextual multimoal   |  | | |
+A+T+V | 0.213   | 0.287 | 0.250 |
 
