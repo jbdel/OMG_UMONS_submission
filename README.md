@@ -26,14 +26,13 @@ Please refer to the context folder for features extraction.
 ### Scores
 
 
-Results on dev set:
-0.2135983266415 
+Results on dev set (averages on 10 runs)
 
 | Modality  | CCC Arousal | CCC Valence | CCC Mean |
 | ------------- | ------------- |------------- |------------- |
 |  Monomodal feature extraction   |  |  | |
 | Text - CNN   | 0.078  | 0.25 | 0.165  |
-| Audio - OpenSmile Features | 0.15  | 0.21 | 0.045 |
+| Audio - OpenSmile Features | 0.045 | 0.21 | 0.15  |
 | Video - 3DCNN   | 0.236650346073  | 0.141425599632 | 0.189 |
 |  Contextual monomodal   |  | | |
 | Text   |   | | 0.220  |
