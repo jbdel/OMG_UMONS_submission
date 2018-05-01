@@ -33,7 +33,7 @@ Results on dev set (averages on 10 runs)
 |  Monomodal feature extraction   |  |  | |
 | Text - CNN   | 0.078  | 0.25 | 0.165  |
 | Audio - OpenSmile Features | 0.045 | 0.21 | 0.15  |
-| Video - 3DCNN   | 0.236650346073  | 0.141425599632 | 0.189 |
+| Video - 3DCNN   | 0.236  | 0.141 | 0.189 |
 |  Contextual monomodal   |  | | |
 | Text   |   | | 0.220  |
 | Audio |  |  | 0.223 |
