@@ -166,7 +166,7 @@ with tf.Graph().as_default():
 
             #logging best dev
             if mean_ccc[0] > dev_step.best_loss[0]:
-                print("Best dev beaten. Before ",dev_step.best_loss[0], "Now", mean_ccc)
+                print("Best dev beaten. Before ",dev_step.best_loss[0], "Now", mean_ccc[0])
                 dev_step.best_loss=mean_ccc
                 path = saver.save(sess, checkpoint_prefix, global_step=global_step)
                 data_helpers.log_score(checkpoint_prefix, global_step,

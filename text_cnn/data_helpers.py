@@ -37,9 +37,8 @@ def get_CCC_score(FLAGS, checkpoint_prefix, scores, video_ids_, utterances_):
         stderr=subprocess.STDOUT)
 
     ret = (str(proc.communicate()[0]))
-
-    arousal_ccc = float(find_between(ret,"Arousal CCC:  ","\\n"))
-    valence_ccc = float(find_between(ret,"Valence CCC:  ","\\n"))
+    arousal_ccc = float(find_between(ret,"Arousal CCC:  ","\n"))
+    valence_ccc = float(find_between(ret,"Valence CCC:  ","\n"))
     mean_ccc = (arousal_ccc+valence_ccc)/2
     print("Mean CCC:", mean_ccc, "Arousal CCC", arousal_ccc, "Valence CCC", valence_ccc)
     return mean_ccc, arousal_ccc, valence_ccc
@@ -150,32 +149,6 @@ def pad_sentences(sentences, max_sent_len_path):
         new_sentence = sentence + [PAD_MARK] * num_padding
         padded_sentences.append(new_sentence)
     return padded_sentences, max_sequence_length
-
-
-# def pad_sentences(sentences, max_sent_len_path, padding_word="<PAD/>", max_filter=5):
-#     """
-#     Pads all sentences to the same length. The length is defined by the longest sentence.
-#     Returns padded sentences.
-#     """
-#     max_sequence_length = 50
-#     if len(max_sent_len_path) > 0:
-#         max_sequence_length = int( open( max_sent_len_path, 'r' ).readlines()[0])
-#
-#     pad_filter = max_filter -1
-#     sequence_length = max_sequence_length + 2*pad_filter
-#     #sequence_length = 64
-#     padded_sentences = []
-#     for i in range(len(sentences)):
-#         sentence = sentences[i]
-#         if len(sentence)>max_sequence_length:
-#             sentence = sentence[:max_sequence_length]
-#         num_padding = sequence_length - len(sentence) - pad_filter
-#         new_sentence = [padding_word]*max_filter + sentence + [padding_word] * num_padding
-#         padded_sentences.append(new_sentence)
-#     return padded_sentences, max_sequence_length
-
-
-
 
 
 def build_vocab(sentences, base_vocab_path):
