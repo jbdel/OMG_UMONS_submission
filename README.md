@@ -26,7 +26,7 @@ Please refer to the context folder for features extraction.
 ### Scores
 
 
-Results on dev set (averages on 10 runs)
+Results on dev set (averages on 10 runs except contex multi (best run))
 
 | Modality  | CCC Arousal | CCC Valence | CCC Mean |
 | ------------- | ------------- |------------- |------------- |
