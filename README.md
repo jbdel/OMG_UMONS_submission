@@ -25,7 +25,7 @@ This is still done modality-wise.
 
 Please refer to the context folder for features extraction.
 
-### Contextual Multimodal feature extraction
+### Contextual multimodal final prediction
 
 The architecture of this model is exactly the same of level 2, but each modality features are concatenated per utterance. 
 
