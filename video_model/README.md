@@ -22,6 +22,7 @@ python 3dcnn.py
 ```
 
 Before training, the scripts will create dataset according to the specifications (32 frames of size 32x32 by default)
+
 Model stops training if ccc score didnt improve for 10 epochs.
 
 To extract features, we use :
@@ -39,3 +40,10 @@ python eval.py --npz_file ./data/dataset_Test_2_32_True.npz \
     --weights_file xxxxx.hdf5 \
     --eval_ccc False
 ```
+
+To runs 10 models, use:
+```bash
+python run_models.sh
+```
+
+to get a mean evaluation prediction score over ten runs
