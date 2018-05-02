@@ -19,12 +19,21 @@ def find_between( s, first, last ):
 def loaddata(video_dir, vid3d, args, mode, color=False, skip=True):
     #if validation, we need to create sorted dataset them accordingly
     files = []
-    csv_file = args.trainCSV if mode == "Train" else args.validationCSV
+    csv_file =  args.testCSV
+    if mode == "Train":
+        csv_file = args.trainCSV
+    if mode == "Validation":
+        csv_file = args.validationCSV
+
     with open(csv_file, 'r') as csvfile:
         reader = csv.DictReader(csvfile)
         for i, row in enumerate(reader):
             filename = row["video"] + "#" +row["utterance"]
-            files.append([filename, row["arousal"], row["valence"]])
+            try:
+                files.append([filename, row["arousal"], row["valence"]])
+            except KeyError:
+                files.append([filename, 0.0, 0.0])
+
     X = []
     labels = []
 
@@ -36,6 +45,9 @@ def loaddata(video_dir, vid3d, args, mode, color=False, skip=True):
         name = os.path.join(video_dir, filename)
         label = [float(arousal), float(valence)]
         labels.append(label)
+        if not os.path.exists(name):
+            print(name)
+            sys.exit(1)
         X.append(vid3d.video3d(name, color=color, skip=skip))
 
     pbar.close()

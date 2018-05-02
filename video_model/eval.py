@@ -11,15 +11,22 @@ import utils
 # python eval.py --npz_file ./data/dataset_Validation_2_32_True.npz \
 #     --fileCSV ./data/omg_ValidationVideos.csv \
 #     --out_name video_validation \
-#     --model_dir ./runs/1525120165 \
+#     --model_dir ./runs/128 \
 #     --weights_file weights-improvement-22-0.08.hdf5
-
-
+#
+#
 # python eval.py --npz_file ./data/dataset_Train_2_32_True.npz \
 #     --fileCSV ./data/omg_TrainVideos.csv \
 #     --out_name video_train \
 #     --model_dir ./runs/1525120165 \
 #     --weights_file weights-improvement-22-0.08.hdf5
+#
+# python eval.py --npz_file ./data/dataset_Test_2_32_True.npz \
+#     --out_name video_test \
+#     --model_dir ./runs/128 \
+#     --weights_file weights-improvement-22-0.08.hdf5 \
+#     --eval_ccc False
+
 
 
 def main():
@@ -32,6 +39,7 @@ def main():
     parser.add_argument('--out_name', type=str, default="validation")
     parser.add_argument('--calculateEvaluationCCC', type=str, default="./data/calculateEvaluationCCC.py")
     parser.add_argument('--fileCSV', type=str, default="./data/omg_ValidationVideos.csv")
+    parser.add_argument('--eval_ccc', type=bool, default="True")
 
 
     args = parser.parse_args()
@@ -75,7 +83,8 @@ def main():
     feature_file = os.path.join(args.model_dir, args.out_name)
     np.save(feature_file, np.array(layer_outputs))
     print("Saving features at ", feature_file+".npy")
-    utils.write_ccc_csv(np.array(predictions), args.calculateEvaluationCCC, args.fileCSV, args.model_dir, verbose=False)
+    if args.eval_ccc:
+        utils.write_ccc_csv(np.array(predictions), args.calculateEvaluationCCC, args.fileCSV, args.model_dir, verbose=False)
 
 
 if __name__ == '__main__':
