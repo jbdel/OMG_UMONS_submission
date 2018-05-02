@@ -6,8 +6,8 @@ import csv
 
 data_path = "data/"
 
-x = np.load(os.path.join(data_path,"IS13_ComParE_train.npy")).astype(np.float)
-y = np.load(os.path.join(data_path,"IS13_ComParE_valid.npy")).astype(np.float)
+x = np.load(os.path.join(data_path,"train.npy")).astype(np.float)
+y = np.load(os.path.join(data_path,"valid.npy")).astype(np.float)
 z = np.load(os.path.join(data_path,"test.npy")).astype(np.float)
 
 print("Original feature size : ", x.shape[1])
