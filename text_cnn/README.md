@@ -33,6 +33,7 @@ We can start a training :
         --batch_size 8
 ```
 
+Model stop training if ccc score didnt improve for over 10 epochs.
 Checkpoints and scores are stored in runs 'runs' folder.
 
 Alternatively, you can fill these parameters in train.py and start 10 trainings by running
