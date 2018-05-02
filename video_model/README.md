@@ -43,7 +43,7 @@ python eval.py --npz_file ./data/dataset_Test_2_32_True.npz \
 
 To runs 10 models, use:
 ```bash
-python run_models.sh
+python run_models.py
 ```
 
 to get a mean evaluation prediction score over ten runs
