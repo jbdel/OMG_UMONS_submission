@@ -1,4 +1,5 @@
 Requirements:
+
 scikit-learn (0.19.1)
 
 This module extract acoustic features for each utterances with opensmile (IS13_ComParE config).
@@ -15,17 +16,13 @@ First, install opensmile stand-alone :
     sh buildStandalone.sh
 ```
 
-Now, lets extract sound from mp4 files :
-
-As arugment, the script takes the folder where videos are stored (created from preprocess.py provided by challenge author) If a video of the csv's is not found, script raisse an error.
+Now, lets extract sound from mp4 files. As arugment, the script takes the folder where videos are stored (created from preprocess.py provided by challenge author) If a video of the csv's is not found, script raisse an error.
 
 ```
 python make_dataset.py --video_path /.../videos/
 ```
 
-Wav files are created in wav folder.
-
-Now, we need to get features, we launch :
+Wav files are created in wav folder. Now, we need to get features, we launch :
 
 ```bash
 python extract.py --open_smile_path xxxx/opensmile-2.3.0/
