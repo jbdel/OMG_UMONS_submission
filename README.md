@@ -12,21 +12,24 @@ This contribution is composed of three levels.
 ### Monomodal feature extraction
 
 Monomodal features (linguisitic, visual and acoustic) are firstly extracted utterance wise.
-Please refer to the text_cnn folder for linguistic features extraction.
-Please refer to the video_model folder for visual features extraction.
-Please refer to the audio_model folder for acoustic features extraction.
+
+Please refer to the text_cnn folder for linguistic features extraction, to the video_model folder for visual features and to the audio_model folder for acoustic features extraction.
 
 ### Contextual monomodal feature extraction
 
-A new contextual model predicts the arousal and valence per video, for each utterance of the video.
+A new contextual model predicts the arousal and valence per video, for each utterance of the video
+
 The model learns to take into account the context of an utterances (the preceding and following ones) before prediction.
+
 This is still done modality-wise.
+
 Please refer to the context folder for features extraction.
 
 ### Contextual Multimodal feature extraction
 
 The architecture of this model is exactly the same of level 2, but each modality features are concatenated per utterance. 
-Please refer to the context folder for features extraction.
+
+Please refer to the context folder
 
 ### Scores
 
