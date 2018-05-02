@@ -37,8 +37,8 @@ def get_CCC_score(FLAGS, checkpoint_prefix, scores, video_ids_, utterances_):
         stderr=subprocess.STDOUT)
 
     ret = (str(proc.communicate()[0]))
-    arousal_ccc = float(find_between(ret,"Arousal CCC:  ","\n"))
-    valence_ccc = float(find_between(ret,"Valence CCC:  ","\n"))
+    arousal_ccc = float(find_between(ret,"Arousal CCC:  ","\\n"))
+    valence_ccc = float(find_between(ret,"Valence CCC:  ","\\n"))
     mean_ccc = (arousal_ccc+valence_ccc)/2
     print("Mean CCC:", mean_ccc, "Arousal CCC", arousal_ccc, "Valence CCC", valence_ccc)
     return mean_ccc, arousal_ccc, valence_ccc

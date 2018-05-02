@@ -16,13 +16,13 @@ import sys
 # python eval.py \
 #     --test_data_path ./data/train.txt \
 #     --validationCSV ./data/omg_TrainVideos.csv
-
-
+#
+#
 # python eval.py \
 #     --test_data_path ./data/validation.txt \
 #     --validationCSV ./data/omg_ValidationVideos.csv
-
-
+#
+#
 # python eval.py \
 #     --test_data_path ./data/test.txt \
 #     --compute_ccc False
