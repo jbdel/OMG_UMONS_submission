@@ -21,7 +21,7 @@ A new contextual model predicts the arousal and valence per video, for each utte
 
 The model learns to take into account the context of an utterances (the preceding and following ones) before prediction.
 
-This is still done modality-wise.
+This is still done modality-wise. To tackle the attention mechanism problem, we use self attention (from [Attention Is All You Need](https://arxiv.org/abs/1706.03762))
 
 Please refer to the context folder for features extraction.
 
