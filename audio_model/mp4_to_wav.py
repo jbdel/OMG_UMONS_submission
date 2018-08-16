@@ -36,7 +36,7 @@ for mode in ["Train","Validation", "Test"]:
         for row in reader:
             found = False
             for x in filter:
-                if (row['video'] in x) and (row['utterance'] in x):
+                if (row['video'].strip() in x) and (row['utterance'].strip() in x):
                     blocks = x.split("/")
                     outfile = os.path.join(args.out_dir,"{}#{}".format(blocks[-2], blocks[-1]).replace("mp4", "wav"))
                     if os.path.exists(outfile) and os.path.getsize(outfile) > 0:
